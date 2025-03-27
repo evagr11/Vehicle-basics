@@ -7,10 +7,15 @@ public class Movimiento : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float maxSpeed;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] float maxRotationSpeed;
     [SerializeField] float friction;
-    [SerializeField] float fuerzaRotacion;
+    [SerializeField] float fuerzaFreno;
     private Rigidbody rb;
-    private Vector3 velocity;
+
+    private bool accelerating;
+    private bool deccelerating;
+    private float rotationInput;
 
     void Start()
     {
@@ -19,49 +24,90 @@ public class Movimiento : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = Vector3.zero;
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            direction += Vector3.forward;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            direction += Vector3.back;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction += Vector3.right;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddTorque(0, -fuerzaRotacion, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddTorque(0, fuerzaRotacion, 0);
-        }
-
-        // Añade velocidad según la dirección
-        if (rb.velocity.magnitude < maxSpeed)
-        {
-            rb.velocity += direction.normalized * speed * Time.deltaTime;
-        }
-
-        if (direction == Vector3.zero)
-        {
-            velocity = new Vector3(
-                velocity.x * (1 - friction * Time.deltaTime),
-                velocity.y,
-                velocity.z * (1 - friction * Time.deltaTime)
-            );
-        }
+        movementWithInput();
     }
 
+    void FixedUpdate()
+    {
+        MovementPhysics();
+    }
+
+    //Movimiento y rotación del personaje
+    void movementWithInput()
+    {
+        rotationInput = 0;
+
+        accelerating = Input.GetKey(KeyCode.W);
+
+        deccelerating = Input.GetKey(KeyCode.S);
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            rotationInput = -1; 
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rotationInput = 1; 
+        }
+
+        rb.AddTorque(rotationInput * rotationSpeed * transform.up * Time.fixedDeltaTime);
+    }
+
+    // Controla la física del movimiento y aplica fricción
+    void MovementPhysics()
+    {
+        Vector3 forwardDirection = transform.forward; // Dirección del movimiento
+
+        // Calcula la velocidad en la dirección de avance
+        float forwardSpeed = rb.velocity.x * forwardDirection.x + rb.velocity.z * forwardDirection.z;
+
+        if (accelerating)
+        {
+            rb.velocity += speed * forwardDirection * Time.fixedDeltaTime;
+        }
+        else
+        {
+            // Se aplica la fricción para reducir la velocidad gradualmente
+            rb.velocity = new Vector3(
+                rb.velocity.x * (1 / (1 + friction * Time.fixedDeltaTime)),
+                0,
+                rb.velocity.z * (1 / (1 + friction * Time.fixedDeltaTime))
+            );
+        }
+
+        if (deccelerating)
+        {
+            if (forwardSpeed > 0) // Si va hacia adelante
+            {
+                Brake(); // Aplica el freno
+            }
+            else // Si no lo acelera en sentido contrario
+            {
+                rb.velocity -= speed * forwardDirection * Time.fixedDeltaTime;
+            }
+        }
+
+        // Limita la velocidad máxima
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+        // Limita la velocidad de rotación máxima
+        if (rb.angularVelocity.magnitude > maxRotationSpeed)
+        {
+            rb.angularVelocity = rb.angularVelocity.normalized * maxRotationSpeed;
+        }
+
+    }
+
+    void Brake()
+    {
+        rb.velocity = new Vector3(
+            rb.velocity.x * (1 / (1 + fuerzaFreno * Time.fixedDeltaTime)),
+            0, 
+            rb.velocity.z * (1 / (1 + fuerzaFreno * Time.fixedDeltaTime))
+        );
+    }
 
 }
 
