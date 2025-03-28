@@ -51,19 +51,19 @@ public class Movimiento : MonoBehaviour
             rotationInput = 1;
         }
 
-        rb.AddTorque(rotationInput * rotationSpeed * transform.up * Time.fixedDeltaTime);
     }
 
     // Controla la física del movimiento y aplica fricción
     void MovementPhysics()
     {
+        rb.AddTorque(rotationInput * rotationSpeed * transform.up * Time.fixedDeltaTime);
+
         Vector3 forwardDirection = transform.forward; // Dirección del movimiento
 
         Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity); // Vector del espacio global a un vector en el espacio local del personaje
 
         if (accelerating)
         {
-            transform.TransformDirection(rb.velocity); // Vector en el espacio local del personaje a un vector en el espacio global
             rb.velocity += speed * forwardDirection * Time.fixedDeltaTime;
         }
         else
@@ -78,8 +78,6 @@ public class Movimiento : MonoBehaviour
 
         if (deccelerating)
         {
-            transform.TransformDirection(rb.velocity);
-
             if (localVelocity.z > 0) // Si va hacia adelante
             {
                 Brake(); // Aplica el freno
