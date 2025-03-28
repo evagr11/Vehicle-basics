@@ -1,3 +1,4 @@
+using Palmmedia.ReportGenerator.Core.Reporting.Builders;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
@@ -43,11 +44,11 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            rotationInput = -1; 
+            rotationInput = -1;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rotationInput = 1; 
+            rotationInput = 1;
         }
 
         rb.AddTorque(rotationInput * rotationSpeed * transform.up * Time.fixedDeltaTime);
@@ -58,11 +59,11 @@ public class Movimiento : MonoBehaviour
     {
         Vector3 forwardDirection = transform.forward; // Dirección del movimiento
 
-        // Calcula la velocidad en la dirección de avance
-        float forwardSpeed = rb.velocity.x * forwardDirection.x + rb.velocity.z * forwardDirection.z;
+        Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity); // Vector del espacio global a un vector en el espacio local del personaje
 
         if (accelerating)
         {
+            transform.TransformDirection(rb.velocity); // Vector en el espacio local del personaje a un vector en el espacio global
             rb.velocity += speed * forwardDirection * Time.fixedDeltaTime;
         }
         else
@@ -77,12 +78,15 @@ public class Movimiento : MonoBehaviour
 
         if (deccelerating)
         {
-            if (forwardSpeed > 0) // Si va hacia adelante
+            transform.TransformDirection(rb.velocity);
+
+            if (localVelocity.z > 0) // Si va hacia adelante
             {
                 Brake(); // Aplica el freno
             }
             else // Si no lo acelera en sentido contrario
             {
+
                 rb.velocity -= speed * forwardDirection * Time.fixedDeltaTime;
             }
         }
@@ -104,10 +108,9 @@ public class Movimiento : MonoBehaviour
     {
         rb.velocity = new Vector3(
             rb.velocity.x * (1 / (1 + fuerzaFreno * Time.fixedDeltaTime)),
-            0, 
+            0,
             rb.velocity.z * (1 / (1 + fuerzaFreno * Time.fixedDeltaTime))
         );
     }
-
 }
 
