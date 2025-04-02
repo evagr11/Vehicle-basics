@@ -26,7 +26,8 @@ public class CamaraFollow : MonoBehaviour
         {
             Vector3 directionAwayFromPlayer = (player.position - transform.position).normalized;
 
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, followSmooth);
+            transform.position = Vector3.SmoothDamp(transform.position, directionAwayFromPlayer, ref currentVelocity, followSmooth);
+
 
 
         }
