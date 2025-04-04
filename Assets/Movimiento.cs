@@ -1,7 +1,3 @@
-using Palmmedia.ReportGenerator.Core.Reporting.Builders;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Movimiento : MonoBehaviour
@@ -12,15 +8,19 @@ public class Movimiento : MonoBehaviour
     [SerializeField] float maxRotationSpeed;
     [SerializeField] float friction;
     [SerializeField] float fuerzaFreno;
-    private Rigidbody rb;
 
     private bool accelerating;
     private bool deccelerating;
     private float rotationInput;
+    private bool handbrake;
+
+    private TrailRenderer trail;
+    private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        trail = GetComponentInChildren<TrailRenderer>();
     }
 
     void Update()
@@ -41,6 +41,8 @@ public class Movimiento : MonoBehaviour
         accelerating = Input.GetKey(KeyCode.W);
 
         deccelerating = Input.GetKey(KeyCode.S);
+
+        handbrake = Input.GetKey(KeyCode.Space);
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -88,6 +90,16 @@ public class Movimiento : MonoBehaviour
                 rb.velocity -= speed * forwardDirection * Time.fixedDeltaTime;
             }
         }
+       
+        if(handbrake)
+        {
+            ApplyHandbrake();
+        }
+        else
+        {
+            // Desactiva el Trail Renderer cuando no está activado el freno de mano
+            trail.emitting = false;
+        }
 
         // Limita la velocidad máxima
         if (rb.velocity.magnitude > maxSpeed)
@@ -109,6 +121,28 @@ public class Movimiento : MonoBehaviour
             0,
             rb.velocity.z * (1 / (1 + fuerzaFreno * Time.fixedDeltaTime))
         );
+    }
+
+    void ApplyHandbrake()
+    {
+        float handbrakeFuerza = 5f; 
+        float extraRotation = 2f; // Aceleración angular extra si está girando
+
+        rb.velocity = new Vector3(
+            rb.velocity.x * (1 / (1 + handbrakeFuerza * Time.fixedDeltaTime)),
+            0,
+            rb.velocity.z * (1 / (1 + handbrakeFuerza * Time.fixedDeltaTime))
+        );
+
+        // Si el coche está girando, aumentar la rotación 
+        if (rotationInput != 0)
+        {
+            rb.AddTorque(rotationInput * extraRotation * transform.up);
+
+        }
+
+        // Desactiva el Trail Renderer cuando está activado el freno de mano
+        trail.emitting = true;
     }
 }
 
