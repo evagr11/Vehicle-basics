@@ -9,7 +9,6 @@ public class Obstacles : MonoBehaviour
     [SerializeField] Transform subida;
     [SerializeField] AnimationCurve curvaMovimiento;
     [SerializeField] float velocidad = 2f;
-    [SerializeField] string tagJugador = "Player";
 
     private bool subiendo = true;
     private float tiempoRecorrido = 0f;
@@ -54,7 +53,7 @@ public class Obstacles : MonoBehaviour
     // Detecta colisiones con el jugador
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(tagJugador))
+        if (collision.gameObject.CompareTag("Player"))
         {
             print("Colisión con jugador");
             // Reinicia la escena

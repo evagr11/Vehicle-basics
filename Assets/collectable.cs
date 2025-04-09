@@ -5,11 +5,13 @@ using UnityEngine;
 public class collectable : MonoBehaviour
 {
     [SerializeField] List<Transform> obstaculos; 
-    [SerializeField] string tagJugador = "Player"; 
+    int indiceAleatorio = 1;
+        int newIndiceAleatorio;
 
-    void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag(tagJugador))
+        if(other.CompareTag("Player"))
         {
             MoverColeccionable();
         }
@@ -17,8 +19,14 @@ public class collectable : MonoBehaviour
 
     void MoverColeccionable()
     {
+
         // obstáculo aleatorio de la lista de obstáculos (entre 0, y el numero de item que tenga la lista)
-        int indiceAleatorio = Random.Range(0, obstaculos.Count);
+        do
+        {
+            indiceAleatorio = Random.Range(0, obstaculos.Count);
+
+        } while (indiceAleatorio == newIndiceAleatorio);
+
 
         // Obtener la nueva posición aleatoria
         Transform nuevoObstaculo = obstaculos[indiceAleatorio];
