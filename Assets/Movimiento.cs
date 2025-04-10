@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class Movimiento : MonoBehaviour
 {
+    [Header("Valores marcha alante")]
     [SerializeField] float speed;
     [SerializeField] float maxSpeed;
     [SerializeField] float rotationSpeed;
     [SerializeField] float maxRotationSpeed;
+
+    [Header("Valores fuerza")]
     [SerializeField] float friction;
     [SerializeField] float fuerzaFreno;
 
@@ -60,13 +63,14 @@ public class Movimiento : MonoBehaviour
     {
         rb.AddTorque(rotationInput * rotationSpeed * transform.up * Time.fixedDeltaTime);
 
-        Vector3 forwardDirection = transform.forward; // Dirección del movimiento
-
         Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity); // Vector del espacio global a un vector en el espacio local del personaje
 
         if (accelerating)
         {
-            rb.velocity += speed * forwardDirection * Time.fixedDeltaTime;
+            if (localVelocity.z < maxSpeed)
+            {
+                rb.velocity += speed * transform.forward * Time.fixedDeltaTime;
+            }
         }
         else
         {
@@ -87,7 +91,7 @@ public class Movimiento : MonoBehaviour
             else // Si no lo acelera en sentido contrario
             {
 
-                rb.velocity -= speed * forwardDirection * Time.fixedDeltaTime;
+                rb.velocity -= speed * transform.forward * Time.fixedDeltaTime;
             }
         }
        

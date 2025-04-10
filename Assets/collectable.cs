@@ -6,7 +6,7 @@ public class collectable : MonoBehaviour
 {
     [SerializeField] List<Transform> obstaculos; 
     int indiceAleatorio = 1;
-        int newIndiceAleatorio;
+    int newIndiceAleatorio;
 
 
     private void OnTriggerEnter(Collider other)
@@ -19,7 +19,6 @@ public class collectable : MonoBehaviour
 
     void MoverColeccionable()
     {
-
         // obstáculo aleatorio de la lista de obstáculos (entre 0, y el numero de item que tenga la lista)
         do
         {
@@ -27,6 +26,8 @@ public class collectable : MonoBehaviour
 
         } while (indiceAleatorio == newIndiceAleatorio);
 
+        // Actualizamos el índice anterior
+        indiceAleatorio = newIndiceAleatorio;
 
         // Obtener la nueva posición aleatoria
         Transform nuevoObstaculo = obstaculos[indiceAleatorio];
