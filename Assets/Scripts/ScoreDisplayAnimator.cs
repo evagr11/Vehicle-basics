@@ -16,8 +16,25 @@ public class ScoreDisplayAnimator : MonoBehaviour
 
     void Start()
     {
+        // El texto empieza invisible y solo aparece al ganar o perder puntos
+        UpdatePointsText();
+        Color color = pointsText.color;
+        color.a = 0f;
+        pointsText.color = color;
+    }
+
+    // Los eventos son estáticos y sobreviven al recargar la escena,
+    // así que hay que quitar los listeners al destruir el objeto
+    void OnEnable()
+    {
         GameEvents.CollectibleEarned.AddListener(AddPoints);
         GameEvents.ObstacleHit.AddListener(SubtractPoints);
+    }
+
+    void OnDisable()
+    {
+        GameEvents.CollectibleEarned.RemoveListener(AddPoints);
+        GameEvents.ObstacleHit.RemoveListener(SubtractPoints);
     }
 
     void AddPoints()
@@ -59,7 +76,7 @@ public class ScoreDisplayAnimator : MonoBehaviour
         while (elapsedTime < animationDuration)
         {
             elapsedTime += Time.deltaTime;
-            float t = elapsedTime / animationDuration; // Normalizaci�n simple
+            float t = elapsedTime / animationDuration; // Normalización simple
             float curveValue = speedCurve.Evaluate(t > 1f ? 1f : t); // Limitar manualmente el valor
             Color newColor = startColor;
             newColor.a = curveValue; // Ajusta la transparencia
@@ -82,7 +99,7 @@ public class ScoreDisplayAnimator : MonoBehaviour
             yield return null;
         }
 
-        // Aseg�rate de dejar el texto invisible al final
+        // Asegúrate de dejar el texto invisible al final
         Color finalColor = pointsText.color;
         finalColor.a = 0f;
         pointsText.color = finalColor;

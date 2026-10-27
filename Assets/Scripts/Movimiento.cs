@@ -39,7 +39,7 @@ public class Movimiento : MonoBehaviour
         MovementPhysics();
     }
 
-    //Movimiento y rotaciÛn del personaje
+    //Movimiento y rotaci√≥n del personaje
     void movementWithInput()
     {
         rotationInput = 0;
@@ -61,7 +61,7 @@ public class Movimiento : MonoBehaviour
 
     }
 
-    // Controla la fÌsica del movimiento y aplica fricciÛn
+    // Controla la f√≠sica del movimiento y aplica fricci√≥n
     void MovementPhysics()
     {
         rb.AddTorque(rotationInput * rotationSpeed * transform.up * Time.fixedDeltaTime);
@@ -77,7 +77,7 @@ public class Movimiento : MonoBehaviour
         }
         else
         {
-            // Se aplica la fricciÛn para reducir la velocidad gradualmente
+            // Se aplica la fricci√≥n para reducir la velocidad gradualmente
             rb.velocity = new Vector3(
                 rb.velocity.x * (1 / (1 + friction * Time.fixedDeltaTime)),
                 0,
@@ -104,19 +104,19 @@ public class Movimiento : MonoBehaviour
         }
         else
         {
-            // Desactiva el Trail Renderer cuando no est· activado el freno de mano
+            // Desactiva el Trail Renderer cuando no est√° activado el freno de mano
             foreach (TrailRenderer trail in trailRenderer)
             {
                 trail.emitting = false;
             }
         }
 
-        // Limita la velocidad m·xima
+        // Limita la velocidad m√°xima
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
-        // Limita la velocidad de rotaciÛn m·xima
+        // Limita la velocidad de rotaci√≥n m√°xima
         if (rb.angularVelocity.magnitude > maxRotationSpeed)
         {
             rb.angularVelocity = rb.angularVelocity.normalized * maxRotationSpeed;
@@ -136,7 +136,7 @@ public class Movimiento : MonoBehaviour
     void ApplyHandbrake()
     {
         float handbrakeFuerza = 15f; 
-        float extraRotation = 2f; // AceleraciÛn angular extra si est· girando
+        float extraRotation = 2f; // Aceleraci√≥n angular extra si est√° girando
 
         rb.velocity = new Vector3(
             rb.velocity.x * (1 / (1 + handbrakeFuerza * Time.fixedDeltaTime)),
@@ -144,7 +144,7 @@ public class Movimiento : MonoBehaviour
             rb.velocity.z * (1 / (1 + handbrakeFuerza * Time.fixedDeltaTime))
         );
 
-        // Si el coche est· girando, aumentar la rotaciÛn 
+        // Si el coche est√° girando, aumentar la rotaci√≥n 
         if (rotationInput != 0)
         {
             rb.AddTorque(rotationInput * extraRotation * transform.up);

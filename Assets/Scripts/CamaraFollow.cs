@@ -1,12 +1,11 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class CamaraFollow : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] float followSmooth = 0.2f;
     [SerializeField] float lookAheadDistance = 30; // mirar hacia adelante distancia
-    [SerializeField] float minDistanceToTarget = 5; // Distancia m�nima al objetivo
+    [SerializeField] float minDistanceToTarget = 5; // Distancia mínima al objetivo
     [SerializeField] float verticalOffset = 2;
     Vector3 currentVelocity;
 
@@ -18,16 +17,12 @@ public class CamaraFollow : MonoBehaviour
 
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, followSmooth);
 
-        float vectorDistance = (player.position.magnitude - transform.position.magnitude);
+        // Si la cámara se acerca demasiado al jugador, la separa hasta la distancia mínima
+        Vector3 directionToPlayer = player.position - transform.position;
 
-        if (vectorDistance < minDistanceToTarget)
+        if (directionToPlayer.magnitude < minDistanceToTarget)
         {
-            Vector3 directionAwayFromPlayer = (player.position - transform.position);
-
-            Vector3 newPosition = minDistanceToTarget / directionAwayFromPlayer.magnitude * directionAwayFromPlayer;
-
-            transform.position = player.position - directionAwayFromPlayer.normalized * minDistanceToTarget;
-
+            transform.position = player.position - directionToPlayer.normalized * minDistanceToTarget;
         }
     }
 }

@@ -15,6 +15,12 @@ public class CollectableSpawner : MonoBehaviour
 
     public void Spawn()
     {
+        if (obstacles.Count == 0 || collectablePrefabs.Count == 0)
+        {
+            Debug.LogWarning("CollectableSpawner: faltan obstáculos o prefabs asignados en el Inspector.");
+            return;
+        }
+
         int newIndex;
         do
         {
@@ -30,8 +36,6 @@ public class CollectableSpawner : MonoBehaviour
         Vector3 spawnPosition = selectedObstacle.position;
         spawnPosition.y = 1f;
 
-        GameObject collectibleInstance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
-
-
+        Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
     }
 }

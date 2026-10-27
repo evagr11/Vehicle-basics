@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +10,7 @@ public class Obstacles : MonoBehaviour
 
     private bool goingUp = true;
     private float elapsedTime = 0f;
+    private bool hitPlayer = false;
 
     void Update()
     {
@@ -20,7 +19,7 @@ public class Obstacles : MonoBehaviour
         // Distancia entre los puntos A y B.
         float distance = pointB.position.y - pointA.position.y;
 
-        // Calcula el valor normalizado de tiempo y evalúa la curva.
+        // Calcula el valor normalizado de tiempo y evalÃºa la curva.
         float t = elapsedTime / distance;
         float curveT = movementCurve.Evaluate(t);
 
@@ -48,11 +47,13 @@ public class Obstacles : MonoBehaviour
     // Detecta colisiones con el jugador
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // hitPlayer evita restar puntos varias veces mientras se espera al reinicio
+        if (!hitPlayer && collision.gameObject.CompareTag("Player"))
         {
-            // Dispara el evento para obstáculo golpeado
+            hitPlayer = true;
+            // Dispara el evento para obstÃ¡culo golpeado
             GameEvents.ObstacleHit.Invoke();
-            Invoke("ResetScene", 1f);
+            Invoke(nameof(ResetScene), 1f);
         }
     }
 
