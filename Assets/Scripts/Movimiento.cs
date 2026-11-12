@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Control del coche con físicas: W acelera, S frena o va marcha atrás, A y D giran y Espacio es
+/// el freno de mano, que derrapa y activa las estelas de las ruedas.
+/// </summary>
 public class Movimiento : MonoBehaviour
 {
     [Header("Valores marcha alante")]
@@ -24,22 +28,26 @@ public class Movimiento : MonoBehaviour
 
     private Rigidbody rb;
 
+    /// <summary>Guarda el <c>Rigidbody</c>.</summary>
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
+    /// <summary>Lee el teclado en cada fotograma.</summary>
     void Update()
     {
         movementWithInput();
     }
 
+    /// <summary>Aplica la física en cada paso de física.</summary>
     void FixedUpdate()
     {
         MovementPhysics();
     }
 
     //Movimiento y rotación del personaje
+    /// <summary>Guarda qué teclas están pulsadas: acelerar, frenar, freno de mano y dirección de giro.</summary>
     void movementWithInput()
     {
         rotationInput = 0;
@@ -62,6 +70,10 @@ public class Movimiento : MonoBehaviour
     }
 
     // Controla la física del movimiento y aplica fricción
+    /// <summary>
+    /// Gira el coche, acelera o aplica la fricción, frena o va marcha atrás, aplica el freno de mano
+    /// y limita la velocidad y el giro máximos.
+    /// </summary>
     void MovementPhysics()
     {
         rb.AddTorque(rotationInput * rotationSpeed * transform.up * Time.fixedDeltaTime);
@@ -124,6 +136,7 @@ public class Movimiento : MonoBehaviour
 
     }
 
+    /// <summary>Reduce la velocidad con la fuerza de freno.</summary>
     void Brake()
     {
         rb.velocity = new Vector3(
@@ -133,6 +146,7 @@ public class Movimiento : MonoBehaviour
         );
     }
 
+    /// <summary>Frena con fuerza, gira más si se está girando y activa las estelas de las ruedas.</summary>
     void ApplyHandbrake()
     {
         float handbrakeFuerza = 15f; 

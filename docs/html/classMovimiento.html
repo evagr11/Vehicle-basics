@@ -1,0 +1,678 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vehicle Basics: Referencia de la clase Movimiento</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vehicle Basics
+   </div>
+   <div id="projectbrief">Coche con físicas, cámara en tercera persona, coleccionables, obstáculos móviles y puntuación con eventos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classMovimiento.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="classMovimiento-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase Movimiento</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Control del coche con físicas: W acelera, S frena o va marcha atrás, A y D giran y Espacio es el freno de mano, que derrapa y activa las estelas de las ruedas.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de Movimiento</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classMovimiento.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:af1ad95186a7cbda554d5be3e6e09be24" id="r_af1ad95186a7cbda554d5be3e6e09be24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1ad95186a7cbda554d5be3e6e09be24">Start</a> ()</td></tr>
+<tr class="memdesc:af1ad95186a7cbda554d5be3e6e09be24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda el <code>Rigidbody</code>.  <br /></td></tr>
+<tr class="separator:af1ad95186a7cbda554d5be3e6e09be24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4de10c1b7c3367c1ba6cf457d159c7" id="r_acd4de10c1b7c3367c1ba6cf457d159c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd4de10c1b7c3367c1ba6cf457d159c7">Update</a> ()</td></tr>
+<tr class="memdesc:acd4de10c1b7c3367c1ba6cf457d159c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee el teclado en cada fotograma.  <br /></td></tr>
+<tr class="separator:acd4de10c1b7c3367c1ba6cf457d159c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d53de9b480fc40e3cdbbf9cfa4058f" id="r_a89d53de9b480fc40e3cdbbf9cfa4058f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d53de9b480fc40e3cdbbf9cfa4058f">FixedUpdate</a> ()</td></tr>
+<tr class="memdesc:a89d53de9b480fc40e3cdbbf9cfa4058f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aplica la física en cada paso de física.  <br /></td></tr>
+<tr class="separator:a89d53de9b480fc40e3cdbbf9cfa4058f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ced5e3f8425cda1526427b586833a3" id="r_a69ced5e3f8425cda1526427b586833a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69ced5e3f8425cda1526427b586833a3">movementWithInput</a> ()</td></tr>
+<tr class="memdesc:a69ced5e3f8425cda1526427b586833a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda qué teclas están pulsadas: acelerar, frenar, freno de mano y dirección de giro.  <br /></td></tr>
+<tr class="separator:a69ced5e3f8425cda1526427b586833a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20038193aa1a3bbef49773eda5c1619e" id="r_a20038193aa1a3bbef49773eda5c1619e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20038193aa1a3bbef49773eda5c1619e">MovementPhysics</a> ()</td></tr>
+<tr class="memdesc:a20038193aa1a3bbef49773eda5c1619e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gira el coche, acelera o aplica la fricción, frena o va marcha atrás, aplica el freno de mano y limita la velocidad y el giro máximos.  <br /></td></tr>
+<tr class="separator:a20038193aa1a3bbef49773eda5c1619e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86d5e20873a2b183d357eb71bf421fc" id="r_aa86d5e20873a2b183d357eb71bf421fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa86d5e20873a2b183d357eb71bf421fc">Brake</a> ()</td></tr>
+<tr class="memdesc:aa86d5e20873a2b183d357eb71bf421fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce la velocidad con la fuerza de freno.  <br /></td></tr>
+<tr class="separator:aa86d5e20873a2b183d357eb71bf421fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9503fc099f53e7a00203eb599b19e1" id="r_a9c9503fc099f53e7a00203eb599b19e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c9503fc099f53e7a00203eb599b19e1">ApplyHandbrake</a> ()</td></tr>
+<tr class="memdesc:a9c9503fc099f53e7a00203eb599b19e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frena con fuerza, gira más si se está girando y activa las estelas de las ruedas.  <br /></td></tr>
+<tr class="separator:a9c9503fc099f53e7a00203eb599b19e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a0bcec0d4ef5382a442e507e371958c84" id="r_a0bcec0d4ef5382a442e507e371958c84"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bcec0d4ef5382a442e507e371958c84">speed</a></td></tr>
+<tr class="separator:a0bcec0d4ef5382a442e507e371958c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae21dfa63c6ea8b62745f3bebf3b50b25" id="r_ae21dfa63c6ea8b62745f3bebf3b50b25"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae21dfa63c6ea8b62745f3bebf3b50b25">maxSpeed</a></td></tr>
+<tr class="separator:ae21dfa63c6ea8b62745f3bebf3b50b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2756bee8835ad3a045f90e3d6ab32c5" id="r_ab2756bee8835ad3a045f90e3d6ab32c5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2756bee8835ad3a045f90e3d6ab32c5">rotationSpeed</a></td></tr>
+<tr class="separator:ab2756bee8835ad3a045f90e3d6ab32c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa358f5264b4d42e7a902322c11c77e1f" id="r_aa358f5264b4d42e7a902322c11c77e1f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa358f5264b4d42e7a902322c11c77e1f">maxRotationSpeed</a></td></tr>
+<tr class="separator:aa358f5264b4d42e7a902322c11c77e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02837a25dd529eb1df7aee11ad074973" id="r_a02837a25dd529eb1df7aee11ad074973"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02837a25dd529eb1df7aee11ad074973">friction</a></td></tr>
+<tr class="separator:a02837a25dd529eb1df7aee11ad074973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e4b017d920732d3482b06ec072735a" id="r_a73e4b017d920732d3482b06ec072735a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e4b017d920732d3482b06ec072735a">fuerzaFreno</a></td></tr>
+<tr class="separator:a73e4b017d920732d3482b06ec072735a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2187e6712043fec7e6a862836af189" id="r_a5f2187e6712043fec7e6a862836af189"><td class="memItemLeft" align="right" valign="top">List&lt; TrailRenderer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f2187e6712043fec7e6a862836af189">trailRenderer</a></td></tr>
+<tr class="separator:a5f2187e6712043fec7e6a862836af189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409fda3a6edb5cdce59d14c03df6bd99" id="r_a409fda3a6edb5cdce59d14c03df6bd99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a409fda3a6edb5cdce59d14c03df6bd99">accelerating</a></td></tr>
+<tr class="separator:a409fda3a6edb5cdce59d14c03df6bd99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c2d55166f0624ca0474bfb25c69a57" id="r_a68c2d55166f0624ca0474bfb25c69a57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68c2d55166f0624ca0474bfb25c69a57">deccelerating</a></td></tr>
+<tr class="separator:a68c2d55166f0624ca0474bfb25c69a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1873fbd0a361965457f267e7b34d6194" id="r_a1873fbd0a361965457f267e7b34d6194"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1873fbd0a361965457f267e7b34d6194">rotationInput</a></td></tr>
+<tr class="separator:a1873fbd0a361965457f267e7b34d6194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42857f5e0455a1162d3276dfa4b2a98b" id="r_a42857f5e0455a1162d3276dfa4b2a98b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42857f5e0455a1162d3276dfa4b2a98b">handbrake</a></td></tr>
+<tr class="separator:a42857f5e0455a1162d3276dfa4b2a98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01947f87674f8140f21cdaa578772f2e" id="r_a01947f87674f8140f21cdaa578772f2e"><td class="memItemLeft" align="right" valign="top">Rigidbody&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01947f87674f8140f21cdaa578772f2e">rb</a></td></tr>
+<tr class="separator:a01947f87674f8140f21cdaa578772f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Control del coche con físicas: W acelera, S frena o va marcha atrás, A y D giran y Espacio es el freno de mano, que derrapa y activa las estelas de las ruedas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00008">8</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a9c9503fc099f53e7a00203eb599b19e1" name="a9c9503fc099f53e7a00203eb599b19e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9503fc099f53e7a00203eb599b19e1">&#9670;&#160;</a></span>ApplyHandbrake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movimiento.ApplyHandbrake </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frena con fuerza, gira más si se está girando y activa las estelas de las ruedas. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00150">150</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa86d5e20873a2b183d357eb71bf421fc" name="aa86d5e20873a2b183d357eb71bf421fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86d5e20873a2b183d357eb71bf421fc">&#9670;&#160;</a></span>Brake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movimiento.Brake </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reduce la velocidad con la fuerza de freno. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00140">140</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a89d53de9b480fc40e3cdbbf9cfa4058f" name="a89d53de9b480fc40e3cdbbf9cfa4058f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d53de9b480fc40e3cdbbf9cfa4058f">&#9670;&#160;</a></span>FixedUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movimiento.FixedUpdate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aplica la física en cada paso de física. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00044">44</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a20038193aa1a3bbef49773eda5c1619e" name="a20038193aa1a3bbef49773eda5c1619e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20038193aa1a3bbef49773eda5c1619e">&#9670;&#160;</a></span>MovementPhysics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movimiento.MovementPhysics </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gira el coche, acelera o aplica la fricción, frena o va marcha atrás, aplica el freno de mano y limita la velocidad y el giro máximos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00077">77</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a69ced5e3f8425cda1526427b586833a3" name="a69ced5e3f8425cda1526427b586833a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ced5e3f8425cda1526427b586833a3">&#9670;&#160;</a></span>movementWithInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movimiento.movementWithInput </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Guarda qué teclas están pulsadas: acelerar, frenar, freno de mano y dirección de giro. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00051">51</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="af1ad95186a7cbda554d5be3e6e09be24" name="af1ad95186a7cbda554d5be3e6e09be24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ad95186a7cbda554d5be3e6e09be24">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movimiento.Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Guarda el <code>Rigidbody</code>. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00032">32</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="acd4de10c1b7c3367c1ba6cf457d159c7" name="acd4de10c1b7c3367c1ba6cf457d159c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4de10c1b7c3367c1ba6cf457d159c7">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Movimiento.Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lee el teclado en cada fotograma. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00038">38</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de datos miembro</h2>
+<a id="a409fda3a6edb5cdce59d14c03df6bd99" name="a409fda3a6edb5cdce59d14c03df6bd99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a409fda3a6edb5cdce59d14c03df6bd99">&#9670;&#160;</a></span>accelerating</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Movimiento.accelerating</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00024">24</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a68c2d55166f0624ca0474bfb25c69a57" name="a68c2d55166f0624ca0474bfb25c69a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c2d55166f0624ca0474bfb25c69a57">&#9670;&#160;</a></span>deccelerating</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Movimiento.deccelerating</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00025">25</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a02837a25dd529eb1df7aee11ad074973" name="a02837a25dd529eb1df7aee11ad074973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02837a25dd529eb1df7aee11ad074973">&#9670;&#160;</a></span>friction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movimiento.friction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00017">17</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a73e4b017d920732d3482b06ec072735a" name="a73e4b017d920732d3482b06ec072735a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e4b017d920732d3482b06ec072735a">&#9670;&#160;</a></span>fuerzaFreno</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movimiento.fuerzaFreno</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00018">18</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a42857f5e0455a1162d3276dfa4b2a98b" name="a42857f5e0455a1162d3276dfa4b2a98b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42857f5e0455a1162d3276dfa4b2a98b">&#9670;&#160;</a></span>handbrake</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Movimiento.handbrake</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00027">27</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa358f5264b4d42e7a902322c11c77e1f" name="aa358f5264b4d42e7a902322c11c77e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa358f5264b4d42e7a902322c11c77e1f">&#9670;&#160;</a></span>maxRotationSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movimiento.maxRotationSpeed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00014">14</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae21dfa63c6ea8b62745f3bebf3b50b25" name="ae21dfa63c6ea8b62745f3bebf3b50b25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21dfa63c6ea8b62745f3bebf3b50b25">&#9670;&#160;</a></span>maxSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movimiento.maxSpeed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00012">12</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a01947f87674f8140f21cdaa578772f2e" name="a01947f87674f8140f21cdaa578772f2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01947f87674f8140f21cdaa578772f2e">&#9670;&#160;</a></span>rb</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rigidbody Movimiento.rb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00029">29</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1873fbd0a361965457f267e7b34d6194" name="a1873fbd0a361965457f267e7b34d6194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1873fbd0a361965457f267e7b34d6194">&#9670;&#160;</a></span>rotationInput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movimiento.rotationInput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00026">26</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="ab2756bee8835ad3a045f90e3d6ab32c5" name="ab2756bee8835ad3a045f90e3d6ab32c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2756bee8835ad3a045f90e3d6ab32c5">&#9670;&#160;</a></span>rotationSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movimiento.rotationSpeed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00013">13</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0bcec0d4ef5382a442e507e371958c84" name="a0bcec0d4ef5382a442e507e371958c84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bcec0d4ef5382a442e507e371958c84">&#9670;&#160;</a></span>speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Movimiento.speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00011">11</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5f2187e6712043fec7e6a862836af189" name="a5f2187e6712043fec7e6a862836af189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2187e6712043fec7e6a862836af189">&#9670;&#160;</a></span>trailRenderer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;TrailRenderer&gt; Movimiento.trailRenderer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Movimiento_8cs_source.html#l00022">22</a> del archivo <a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li><a class="el" href="Movimiento_8cs_source.html">Movimiento.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMovimiento.html">Movimiento</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

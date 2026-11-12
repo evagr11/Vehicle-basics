@@ -4,6 +4,7 @@
 
 <div align="center">
   <a href="https://github.com/evagr11/Vehicle-basics" target="_blank"><img src="https://img.shields.io/badge/Ver_Código-B91C1C?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"></a>
+  <a href="https://evagr11.github.io/Vehicle-basics/" target="_blank"><img src="https://img.shields.io/badge/Documentación_(Doxygen)-B91C1C?style=for-the-badge&logo=doxygen&logoColor=white" alt="Documentación del código"></a>
 </div>
 
 <div align="center">

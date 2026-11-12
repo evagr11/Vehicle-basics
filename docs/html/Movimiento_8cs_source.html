@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vehicle Basics: Archivo de código fuente Movimiento.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vehicle Basics
+   </div>
+   <div id="projectbrief">Coche con físicas, cámara en tercera persona, coleccionables, obstáculos móviles y puntuación con eventos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('Movimiento_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Movimiento.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Movimiento_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classMovimiento.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classMovimiento.html">Movimiento</a> : MonoBehaviour</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    [Header(<span class="stringliteral">&quot;Valores marcha alante&quot;</span>)]</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classMovimiento.html#a0bcec0d4ef5382a442e507e371958c84">   11</a></span>    [SerializeField] <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovimiento.html#a0bcec0d4ef5382a442e507e371958c84">speed</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classMovimiento.html#ae21dfa63c6ea8b62745f3bebf3b50b25">   12</a></span>    [SerializeField] <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovimiento.html#ae21dfa63c6ea8b62745f3bebf3b50b25">maxSpeed</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classMovimiento.html#ab2756bee8835ad3a045f90e3d6ab32c5">   13</a></span>    [SerializeField] <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovimiento.html#ab2756bee8835ad3a045f90e3d6ab32c5">rotationSpeed</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classMovimiento.html#aa358f5264b4d42e7a902322c11c77e1f">   14</a></span>    [SerializeField] <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovimiento.html#aa358f5264b4d42e7a902322c11c77e1f">maxRotationSpeed</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    [Header(<span class="stringliteral">&quot;Valores fuerza&quot;</span>)]</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classMovimiento.html#a02837a25dd529eb1df7aee11ad074973">   17</a></span>    [SerializeField] <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovimiento.html#a02837a25dd529eb1df7aee11ad074973">friction</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classMovimiento.html#a73e4b017d920732d3482b06ec072735a">   18</a></span>    [SerializeField] <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovimiento.html#a73e4b017d920732d3482b06ec072735a">fuerzaFreno</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    [Header(<span class="stringliteral">&quot;Trails&quot;</span>)]</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classMovimiento.html#a5f2187e6712043fec7e6a862836af189">   22</a></span>    [SerializeField] <span class="keyword">private</span> List&lt;TrailRenderer&gt; <a class="code hl_variable" href="classMovimiento.html#a5f2187e6712043fec7e6a862836af189">trailRenderer</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classMovimiento.html#a409fda3a6edb5cdce59d14c03df6bd99">   24</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classMovimiento.html#a409fda3a6edb5cdce59d14c03df6bd99">accelerating</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classMovimiento.html#a68c2d55166f0624ca0474bfb25c69a57">   25</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classMovimiento.html#a68c2d55166f0624ca0474bfb25c69a57">deccelerating</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">   26</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">rotationInput</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classMovimiento.html#a42857f5e0455a1162d3276dfa4b2a98b">   27</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="classMovimiento.html#a42857f5e0455a1162d3276dfa4b2a98b">handbrake</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">   29</a></span>    <span class="keyword">private</span> Rigidbody <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classMovimiento.html#af1ad95186a7cbda554d5be3e6e09be24">   32</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovimiento.html#af1ad95186a7cbda554d5be3e6e09be24">Start</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a> = GetComponent&lt;Rigidbody&gt;();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classMovimiento.html#acd4de10c1b7c3367c1ba6cf457d159c7">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovimiento.html#acd4de10c1b7c3367c1ba6cf457d159c7">Update</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_function" href="classMovimiento.html#a69ced5e3f8425cda1526427b586833a3">movementWithInput</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classMovimiento.html#a89d53de9b480fc40e3cdbbf9cfa4058f">   44</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovimiento.html#a89d53de9b480fc40e3cdbbf9cfa4058f">FixedUpdate</a>()</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_function" href="classMovimiento.html#a20038193aa1a3bbef49773eda5c1619e">MovementPhysics</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">//Movimiento y rotación del personaje</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classMovimiento.html#a69ced5e3f8425cda1526427b586833a3">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovimiento.html#a69ced5e3f8425cda1526427b586833a3">movementWithInput</a>()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_variable" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">rotationInput</a> = 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_variable" href="classMovimiento.html#a409fda3a6edb5cdce59d14c03df6bd99">accelerating</a> = Input.GetKey(KeyCode.W);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_variable" href="classMovimiento.html#a68c2d55166f0624ca0474bfb25c69a57">deccelerating</a> = Input.GetKey(KeyCode.S);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_variable" href="classMovimiento.html#a42857f5e0455a1162d3276dfa4b2a98b">handbrake</a> = Input.GetKey(KeyCode.Space);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (Input.GetKey(KeyCode.A))</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_variable" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">rotationInput</a> = -1;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (Input.GetKey(KeyCode.D))</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <a class="code hl_variable" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">rotationInput</a> = 1;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">// Controla la física del movimiento y aplica fricción</span></div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classMovimiento.html#a20038193aa1a3bbef49773eda5c1619e">   77</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovimiento.html#a20038193aa1a3bbef49773eda5c1619e">MovementPhysics</a>()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.AddTorque(<a class="code hl_variable" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">rotationInput</a> * <a class="code hl_variable" href="classMovimiento.html#ab2756bee8835ad3a045f90e3d6ab32c5">rotationSpeed</a> * transform.up * Time.fixedDeltaTime);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        Vector3 localVelocity = transform.InverseTransformDirection(<a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity); <span class="comment">// Vector del espacio global a un vector en el espacio local del personaje</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovimiento.html#a409fda3a6edb5cdce59d14c03df6bd99">accelerating</a>)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">if</span> (localVelocity.z &lt; <a class="code hl_variable" href="classMovimiento.html#ae21dfa63c6ea8b62745f3bebf3b50b25">maxSpeed</a>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                rb.velocity += <a class="code hl_variable" href="classMovimiento.html#a0bcec0d4ef5382a442e507e371958c84">speed</a> * transform.forward * Time.fixedDeltaTime;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="comment">// Se aplica la fricción para reducir la velocidad gradualmente</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            rb.velocity = <span class="keyword">new</span> Vector3(</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity.x * (1 / (1 + <a class="code hl_variable" href="classMovimiento.html#a02837a25dd529eb1df7aee11ad074973">friction</a> * Time.fixedDeltaTime)),</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                0,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity.z * (1 / (1 + <a class="code hl_variable" href="classMovimiento.html#a02837a25dd529eb1df7aee11ad074973">friction</a> * Time.fixedDeltaTime))</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            );</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovimiento.html#a68c2d55166f0624ca0474bfb25c69a57">deccelerating</a>)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">if</span> (localVelocity.z &gt; 0) <span class="comment">// Si va hacia adelante</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <a class="code hl_function" href="classMovimiento.html#aa86d5e20873a2b183d357eb71bf421fc">Brake</a>(); <span class="comment">// Aplica el freno</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">else</span> <span class="comment">// Si no lo acelera en sentido contrario</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                rb.velocity -= <a class="code hl_variable" href="classMovimiento.html#a0bcec0d4ef5382a442e507e371958c84">speed</a> * transform.forward * Time.fixedDeltaTime;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>       </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classMovimiento.html#a42857f5e0455a1162d3276dfa4b2a98b">handbrake</a>)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_function" href="classMovimiento.html#a9c9503fc099f53e7a00203eb599b19e1">ApplyHandbrake</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="comment">// Desactiva el Trail Renderer cuando no está activado el freno de mano</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <span class="keywordflow">foreach</span> (TrailRenderer trail <span class="keywordflow">in</span> <a class="code hl_variable" href="classMovimiento.html#a5f2187e6712043fec7e6a862836af189">trailRenderer</a>)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                trail.emitting = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="comment">// Limita la velocidad máxima</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity.magnitude &gt; <a class="code hl_variable" href="classMovimiento.html#ae21dfa63c6ea8b62745f3bebf3b50b25">maxSpeed</a>)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            rb.velocity = rb.velocity.normalized * <a class="code hl_variable" href="classMovimiento.html#ae21dfa63c6ea8b62745f3bebf3b50b25">maxSpeed</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="comment">// Limita la velocidad de rotación máxima</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.angularVelocity.magnitude &gt; <a class="code hl_variable" href="classMovimiento.html#aa358f5264b4d42e7a902322c11c77e1f">maxRotationSpeed</a>)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            rb.angularVelocity = rb.angularVelocity.normalized * <a class="code hl_variable" href="classMovimiento.html#aa358f5264b4d42e7a902322c11c77e1f">maxRotationSpeed</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classMovimiento.html#aa86d5e20873a2b183d357eb71bf421fc">  140</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovimiento.html#aa86d5e20873a2b183d357eb71bf421fc">Brake</a>()</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        rb.velocity = <span class="keyword">new</span> Vector3(</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity.x * (1 / (1 + <a class="code hl_variable" href="classMovimiento.html#a73e4b017d920732d3482b06ec072735a">fuerzaFreno</a> * Time.fixedDeltaTime)),</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            0,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity.z * (1 / (1 + <a class="code hl_variable" href="classMovimiento.html#a73e4b017d920732d3482b06ec072735a">fuerzaFreno</a> * Time.fixedDeltaTime))</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        );</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classMovimiento.html#a9c9503fc099f53e7a00203eb599b19e1">  150</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMovimiento.html#a9c9503fc099f53e7a00203eb599b19e1">ApplyHandbrake</a>()</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordtype">float</span> handbrakeFuerza = 15f; </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordtype">float</span> extraRotation = 2f; <span class="comment">// Aceleración angular extra si está girando</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        rb.velocity = <span class="keyword">new</span> Vector3(</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity.x * (1 / (1 + handbrakeFuerza * Time.fixedDeltaTime)),</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            0,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.velocity.z * (1 / (1 + handbrakeFuerza * Time.fixedDeltaTime))</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        );</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">// Si el coche está girando, aumentar la rotación </span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">rotationInput</a> != 0)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <a class="code hl_variable" href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">rb</a>.AddTorque(<a class="code hl_variable" href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">rotationInput</a> * extraRotation * transform.up);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordflow">foreach</span> (TrailRenderer trail <span class="keywordflow">in</span> <a class="code hl_variable" href="classMovimiento.html#a5f2187e6712043fec7e6a862836af189">trailRenderer</a>)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            trail.emitting = <span class="keyword">true</span>; </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
+</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="ttc" id="aclassMovimiento_html"><div class="ttname"><a href="classMovimiento.html">Movimiento</a></div><div class="ttdoc">Control del coche con físicas: W acelera, S frena o va marcha atrás, A y D giran y Espacio es el fren...</div><div class="ttdef"><b>Definition</b> <a href="#l00008">Movimiento.cs:9</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a01947f87674f8140f21cdaa578772f2e"><div class="ttname"><a href="classMovimiento.html#a01947f87674f8140f21cdaa578772f2e">Movimiento.rb</a></div><div class="ttdeci">Rigidbody rb</div><div class="ttdef"><b>Definition</b> <a href="#l00029">Movimiento.cs:29</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a02837a25dd529eb1df7aee11ad074973"><div class="ttname"><a href="classMovimiento.html#a02837a25dd529eb1df7aee11ad074973">Movimiento.friction</a></div><div class="ttdeci">float friction</div><div class="ttdef"><b>Definition</b> <a href="#l00017">Movimiento.cs:17</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a0bcec0d4ef5382a442e507e371958c84"><div class="ttname"><a href="classMovimiento.html#a0bcec0d4ef5382a442e507e371958c84">Movimiento.speed</a></div><div class="ttdeci">float speed</div><div class="ttdef"><b>Definition</b> <a href="#l00011">Movimiento.cs:11</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a1873fbd0a361965457f267e7b34d6194"><div class="ttname"><a href="classMovimiento.html#a1873fbd0a361965457f267e7b34d6194">Movimiento.rotationInput</a></div><div class="ttdeci">float rotationInput</div><div class="ttdef"><b>Definition</b> <a href="#l00026">Movimiento.cs:26</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a20038193aa1a3bbef49773eda5c1619e"><div class="ttname"><a href="classMovimiento.html#a20038193aa1a3bbef49773eda5c1619e">Movimiento.MovementPhysics</a></div><div class="ttdeci">void MovementPhysics()</div><div class="ttdoc">Gira el coche, acelera o aplica la fricción, frena o va marcha atrás, aplica el freno de mano y limit...</div><div class="ttdef"><b>Definition</b> <a href="#l00077">Movimiento.cs:77</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a409fda3a6edb5cdce59d14c03df6bd99"><div class="ttname"><a href="classMovimiento.html#a409fda3a6edb5cdce59d14c03df6bd99">Movimiento.accelerating</a></div><div class="ttdeci">bool accelerating</div><div class="ttdef"><b>Definition</b> <a href="#l00024">Movimiento.cs:24</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a42857f5e0455a1162d3276dfa4b2a98b"><div class="ttname"><a href="classMovimiento.html#a42857f5e0455a1162d3276dfa4b2a98b">Movimiento.handbrake</a></div><div class="ttdeci">bool handbrake</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Movimiento.cs:27</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a5f2187e6712043fec7e6a862836af189"><div class="ttname"><a href="classMovimiento.html#a5f2187e6712043fec7e6a862836af189">Movimiento.trailRenderer</a></div><div class="ttdeci">List&lt; TrailRenderer &gt; trailRenderer</div><div class="ttdef"><b>Definition</b> <a href="#l00022">Movimiento.cs:22</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a68c2d55166f0624ca0474bfb25c69a57"><div class="ttname"><a href="classMovimiento.html#a68c2d55166f0624ca0474bfb25c69a57">Movimiento.deccelerating</a></div><div class="ttdeci">bool deccelerating</div><div class="ttdef"><b>Definition</b> <a href="#l00025">Movimiento.cs:25</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a69ced5e3f8425cda1526427b586833a3"><div class="ttname"><a href="classMovimiento.html#a69ced5e3f8425cda1526427b586833a3">Movimiento.movementWithInput</a></div><div class="ttdeci">void movementWithInput()</div><div class="ttdoc">Guarda qué teclas están pulsadas: acelerar, frenar, freno de mano y dirección de giro.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Movimiento.cs:51</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a73e4b017d920732d3482b06ec072735a"><div class="ttname"><a href="classMovimiento.html#a73e4b017d920732d3482b06ec072735a">Movimiento.fuerzaFreno</a></div><div class="ttdeci">float fuerzaFreno</div><div class="ttdef"><b>Definition</b> <a href="#l00018">Movimiento.cs:18</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a89d53de9b480fc40e3cdbbf9cfa4058f"><div class="ttname"><a href="classMovimiento.html#a89d53de9b480fc40e3cdbbf9cfa4058f">Movimiento.FixedUpdate</a></div><div class="ttdeci">void FixedUpdate()</div><div class="ttdoc">Aplica la física en cada paso de física.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">Movimiento.cs:44</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_a9c9503fc099f53e7a00203eb599b19e1"><div class="ttname"><a href="classMovimiento.html#a9c9503fc099f53e7a00203eb599b19e1">Movimiento.ApplyHandbrake</a></div><div class="ttdeci">void ApplyHandbrake()</div><div class="ttdoc">Frena con fuerza, gira más si se está girando y activa las estelas de las ruedas.</div><div class="ttdef"><b>Definition</b> <a href="#l00150">Movimiento.cs:150</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_aa358f5264b4d42e7a902322c11c77e1f"><div class="ttname"><a href="classMovimiento.html#aa358f5264b4d42e7a902322c11c77e1f">Movimiento.maxRotationSpeed</a></div><div class="ttdeci">float maxRotationSpeed</div><div class="ttdef"><b>Definition</b> <a href="#l00014">Movimiento.cs:14</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_aa86d5e20873a2b183d357eb71bf421fc"><div class="ttname"><a href="classMovimiento.html#aa86d5e20873a2b183d357eb71bf421fc">Movimiento.Brake</a></div><div class="ttdeci">void Brake()</div><div class="ttdoc">Reduce la velocidad con la fuerza de freno.</div><div class="ttdef"><b>Definition</b> <a href="#l00140">Movimiento.cs:140</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_ab2756bee8835ad3a045f90e3d6ab32c5"><div class="ttname"><a href="classMovimiento.html#ab2756bee8835ad3a045f90e3d6ab32c5">Movimiento.rotationSpeed</a></div><div class="ttdeci">float rotationSpeed</div><div class="ttdef"><b>Definition</b> <a href="#l00013">Movimiento.cs:13</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_acd4de10c1b7c3367c1ba6cf457d159c7"><div class="ttname"><a href="classMovimiento.html#acd4de10c1b7c3367c1ba6cf457d159c7">Movimiento.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Lee el teclado en cada fotograma.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">Movimiento.cs:38</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_ae21dfa63c6ea8b62745f3bebf3b50b25"><div class="ttname"><a href="classMovimiento.html#ae21dfa63c6ea8b62745f3bebf3b50b25">Movimiento.maxSpeed</a></div><div class="ttdeci">float maxSpeed</div><div class="ttdef"><b>Definition</b> <a href="#l00012">Movimiento.cs:12</a></div></div>
+<div class="ttc" id="aclassMovimiento_html_af1ad95186a7cbda554d5be3e6e09be24"><div class="ttname"><a href="classMovimiento.html#af1ad95186a7cbda554d5be3e6e09be24">Movimiento.Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Guarda el Rigidbody.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">Movimiento.cs:32</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a class="el" href="Movimiento_8cs.html">Movimiento.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

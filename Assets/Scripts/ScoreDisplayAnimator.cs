@@ -2,6 +2,10 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Puntuación del jugador. El marcador está oculto y aparece con un fundido cada vez que se ganan
+/// o se pierden puntos.
+/// </summary>
 public class ScoreDisplayAnimator : MonoBehaviour
 {
     [SerializeField] float currentScore = 0f;
@@ -14,6 +18,7 @@ public class ScoreDisplayAnimator : MonoBehaviour
 
     private Coroutine animationCoroutine = null;
 
+    /// <summary>Escribe la puntuación y deja el texto invisible.</summary>
     void Start()
     {
         // El texto empieza invisible y solo aparece al ganar o perder puntos
@@ -25,18 +30,21 @@ public class ScoreDisplayAnimator : MonoBehaviour
 
     // Los eventos son estáticos y sobreviven al recargar la escena,
     // así que hay que quitar los listeners al destruir el objeto
+    /// <summary>Se suscribe a los eventos de coleccionable y de choque.</summary>
     void OnEnable()
     {
         GameEvents.CollectibleEarned.AddListener(AddPoints);
         GameEvents.ObstacleHit.AddListener(SubtractPoints);
     }
 
+    /// <summary>Se da de baja de los eventos, que son estáticos y siguen vivos al recargar la escena.</summary>
     void OnDisable()
     {
         GameEvents.CollectibleEarned.RemoveListener(AddPoints);
         GameEvents.ObstacleHit.RemoveListener(SubtractPoints);
     }
 
+    /// <summary>Suma <c>pointsToAdd</c> y enseña el marcador.</summary>
     void AddPoints()
     {
         currentScore += pointsToAdd;
@@ -44,6 +52,7 @@ public class ScoreDisplayAnimator : MonoBehaviour
         TriggerPointsAnimation();
     }
 
+    /// <summary>Resta <c>pointsToSubtract</c> sin bajar de 0 y enseña el marcador.</summary>
     void SubtractPoints()
     {
         currentScore -= pointsToSubtract;
@@ -52,11 +61,13 @@ public class ScoreDisplayAnimator : MonoBehaviour
         TriggerPointsAnimation();
     }
 
+    /// <summary>Escribe la puntuación en el texto.</summary>
     void UpdatePointsText()
     {
         pointsText.text = currentScore.ToString();
     }
 
+    /// <summary>Empieza el fundido, parando el anterior si todavía se estaba haciendo.</summary>
     void TriggerPointsAnimation()
     {
         if (animationCoroutine != null)
@@ -67,6 +78,9 @@ public class ScoreDisplayAnimator : MonoBehaviour
         animationCoroutine = StartCoroutine(PointsVisibility());
     }
 
+    /// <summary>
+    /// Hace aparecer el marcador, lo deja visible <c>displayDuration</c> segundos y lo vuelve a ocultar.
+    /// </summary>
     IEnumerator PointsVisibility()
     {
         float elapsedTime = 0f;

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Cámara en tercera persona que sigue al coche desde detrás y mira un poco por delante de él.
+/// </summary>
 public class CamaraFollow : MonoBehaviour
 {
     [SerializeField] Transform player;
@@ -9,6 +12,10 @@ public class CamaraFollow : MonoBehaviour
     [SerializeField] float verticalOffset = 2;
     Vector3 currentVelocity;
 
+    /// <summary>
+    /// Mira hacia un punto delante del coche, se mueve suavemente detrás y por encima de él, y nunca
+    /// se acerca más de <c>minDistanceToTarget</c>.
+    /// </summary>
     private void FixedUpdate()
     {
         transform.LookAt(player.transform.position + lookAheadDistance * player.transform.forward);

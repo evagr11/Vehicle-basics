@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Obstáculo que sube y baja entre dos puntos siguiendo una curva. Si el coche choca con él,
+/// resta puntos y reinicia la escena.
+/// </summary>
 public class Obstacles : MonoBehaviour
 {
     [SerializeField] Transform pointA;
@@ -12,6 +16,7 @@ public class Obstacles : MonoBehaviour
     private float elapsedTime = 0f;
     private bool hitPlayer = false;
 
+    /// <summary>Mueve el obstáculo hacia arriba o hacia abajo y cambia de sentido al llegar a un extremo.</summary>
     void Update()
     {
         elapsedTime += Time.deltaTime * speed;
@@ -45,6 +50,10 @@ public class Obstacles : MonoBehaviour
     }
 
     // Detecta colisiones con el jugador
+    /// <summary>
+    /// Al chocar con el jugador lanza <see cref="GameEvents.ObstacleHit"/> una sola vez y reinicia la escena al segundo.
+    /// </summary>
+    /// <param name="collision">Datos del choque.</param>
     private void OnCollisionEnter(Collision collision)
     {
         // hitPlayer evita restar puntos varias veces mientras se espera al reinicio
@@ -57,6 +66,7 @@ public class Obstacles : MonoBehaviour
         }
     }
 
+    /// <summary>Vuelve a cargar la escena actual.</summary>
     void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

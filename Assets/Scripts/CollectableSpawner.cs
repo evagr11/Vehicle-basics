@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Coloca coleccionables al azar encima de uno de los obstáculos, sin repetir el último.
+/// </summary>
 public class CollectableSpawner : MonoBehaviour
 {
     [SerializeField] private List<Transform> obstacles;
@@ -8,11 +11,15 @@ public class CollectableSpawner : MonoBehaviour
 
     private int lastObstacleIndex = -1;
 
+    /// <summary>Coloca el primer coleccionable.</summary>
     private void Start()
     {
         Spawn();
     }
 
+    /// <summary>
+    /// Elige un obstáculo distinto del anterior y un coleccionable al azar, y lo crea encima de él.
+    /// </summary>
     public void Spawn()
     {
         if (obstacles.Count == 0 || collectablePrefabs.Count == 0)

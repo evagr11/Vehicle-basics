@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vehicle Basics: Referencia de la clase Obstacles</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vehicle Basics
+   </div>
+   <div id="projectbrief">Coche con físicas, cámara en tercera persona, coleccionables, obstáculos móviles y puntuación con eventos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classObstacles.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="classObstacles-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase Obstacles</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Obstáculo que sube y baja entre dos puntos siguiendo una curva. Si el coche choca con él, resta puntos y reinicia la escena.  
+ <a href="#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de Obstacles</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classObstacles.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a1c654788f161aa4b2057201f35b41b9b" id="r_a1c654788f161aa4b2057201f35b41b9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c654788f161aa4b2057201f35b41b9b">Update</a> ()</td></tr>
+<tr class="memdesc:a1c654788f161aa4b2057201f35b41b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mueve el obstáculo hacia arriba o hacia abajo y cambia de sentido al llegar a un extremo.  <br /></td></tr>
+<tr class="separator:a1c654788f161aa4b2057201f35b41b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a95c2e35c1cbd445f5a075b69660d1b" id="r_a2a95c2e35c1cbd445f5a075b69660d1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a95c2e35c1cbd445f5a075b69660d1b">OnCollisionEnter</a> (Collision collision)</td></tr>
+<tr class="memdesc:a2a95c2e35c1cbd445f5a075b69660d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Al chocar con el jugador lanza <a class="el" href="classGameEvents.html#aad3bec5c10f348229ee8e3c2bcce38a1" title="Se lanza al chocar contra un obstáculo.">GameEvents.ObstacleHit</a> una sola vez y reinicia la escena al segundo.  <br /></td></tr>
+<tr class="separator:a2a95c2e35c1cbd445f5a075b69660d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f02cf6619a7deb4648da967c651b31a" id="r_a1f02cf6619a7deb4648da967c651b31a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f02cf6619a7deb4648da967c651b31a">ResetScene</a> ()</td></tr>
+<tr class="memdesc:a1f02cf6619a7deb4648da967c651b31a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vuelve a cargar la escena actual.  <br /></td></tr>
+<tr class="separator:a1f02cf6619a7deb4648da967c651b31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a788ad7509afa5352116455c6b4ec39f6" id="r_a788ad7509afa5352116455c6b4ec39f6"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a788ad7509afa5352116455c6b4ec39f6">pointA</a></td></tr>
+<tr class="separator:a788ad7509afa5352116455c6b4ec39f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8c668b27c489393d9ab4c61c60ceff" id="r_a6a8c668b27c489393d9ab4c61c60ceff"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a8c668b27c489393d9ab4c61c60ceff">pointB</a></td></tr>
+<tr class="separator:a6a8c668b27c489393d9ab4c61c60ceff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5368e78f2f1a7a620618420759fcd4f" id="r_af5368e78f2f1a7a620618420759fcd4f"><td class="memItemLeft" align="right" valign="top">AnimationCurve&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5368e78f2f1a7a620618420759fcd4f">movementCurve</a></td></tr>
+<tr class="separator:af5368e78f2f1a7a620618420759fcd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a569781e8cdbb4d0068217f347fd2d798" id="r_a569781e8cdbb4d0068217f347fd2d798"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a569781e8cdbb4d0068217f347fd2d798">speed</a> = 2f</td></tr>
+<tr class="separator:a569781e8cdbb4d0068217f347fd2d798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3942e56fbb01da7759920d040c259f3f" id="r_a3942e56fbb01da7759920d040c259f3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3942e56fbb01da7759920d040c259f3f">goingUp</a> = true</td></tr>
+<tr class="separator:a3942e56fbb01da7759920d040c259f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b1f8b439c81ab3fe76907951adac72" id="r_a20b1f8b439c81ab3fe76907951adac72"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20b1f8b439c81ab3fe76907951adac72">elapsedTime</a> = 0f</td></tr>
+<tr class="separator:a20b1f8b439c81ab3fe76907951adac72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abef2f341cf80361b97c88c2bd75f92a0" id="r_abef2f341cf80361b97c88c2bd75f92a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abef2f341cf80361b97c88c2bd75f92a0">hitPlayer</a> = false</td></tr>
+<tr class="separator:abef2f341cf80361b97c88c2bd75f92a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Obstáculo que sube y baja entre dos puntos siguiendo una curva. Si el coche choca con él, resta puntos y reinicia la escena. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00008">8</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a2a95c2e35c1cbd445f5a075b69660d1b" name="a2a95c2e35c1cbd445f5a075b69660d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a95c2e35c1cbd445f5a075b69660d1b">&#9670;&#160;</a></span>OnCollisionEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Obstacles.OnCollisionEnter </td>
+          <td>(</td>
+          <td class="paramtype">Collision</td>          <td class="paramname"><span class="paramname"><em>collision</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Al chocar con el jugador lanza <a class="el" href="classGameEvents.html#aad3bec5c10f348229ee8e3c2bcce38a1" title="Se lanza al chocar contra un obstáculo.">GameEvents.ObstacleHit</a> una sola vez y reinicia la escena al segundo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collision</td><td>Datos del choque.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00057">57</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1f02cf6619a7deb4648da967c651b31a" name="a1f02cf6619a7deb4648da967c651b31a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f02cf6619a7deb4648da967c651b31a">&#9670;&#160;</a></span>ResetScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Obstacles.ResetScene </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vuelve a cargar la escena actual. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00070">70</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1c654788f161aa4b2057201f35b41b9b" name="a1c654788f161aa4b2057201f35b41b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c654788f161aa4b2057201f35b41b9b">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Obstacles.Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mueve el obstáculo hacia arriba o hacia abajo y cambia de sentido al llegar a un extremo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00020">20</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de datos miembro</h2>
+<a id="a20b1f8b439c81ab3fe76907951adac72" name="a20b1f8b439c81ab3fe76907951adac72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b1f8b439c81ab3fe76907951adac72">&#9670;&#160;</a></span>elapsedTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Obstacles.elapsedTime = 0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00016">16</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3942e56fbb01da7759920d040c259f3f" name="a3942e56fbb01da7759920d040c259f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3942e56fbb01da7759920d040c259f3f">&#9670;&#160;</a></span>goingUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Obstacles.goingUp = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00015">15</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="abef2f341cf80361b97c88c2bd75f92a0" name="abef2f341cf80361b97c88c2bd75f92a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abef2f341cf80361b97c88c2bd75f92a0">&#9670;&#160;</a></span>hitPlayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Obstacles.hitPlayer = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00017">17</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="af5368e78f2f1a7a620618420759fcd4f" name="af5368e78f2f1a7a620618420759fcd4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5368e78f2f1a7a620618420759fcd4f">&#9670;&#160;</a></span>movementCurve</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnimationCurve Obstacles.movementCurve</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00012">12</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a788ad7509afa5352116455c6b4ec39f6" name="a788ad7509afa5352116455c6b4ec39f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a788ad7509afa5352116455c6b4ec39f6">&#9670;&#160;</a></span>pointA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform Obstacles.pointA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00010">10</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a6a8c668b27c489393d9ab4c61c60ceff" name="a6a8c668b27c489393d9ab4c61c60ceff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a8c668b27c489393d9ab4c61c60ceff">&#9670;&#160;</a></span>pointB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform Obstacles.pointB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00011">11</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a569781e8cdbb4d0068217f347fd2d798" name="a569781e8cdbb4d0068217f347fd2d798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a569781e8cdbb4d0068217f347fd2d798">&#9670;&#160;</a></span>speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Obstacles.speed = 2f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Obstacles_8cs_source.html#l00013">13</a> del archivo <a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li><a class="el" href="Obstacles_8cs_source.html">Obstacles.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classObstacles.html">Obstacles</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>
